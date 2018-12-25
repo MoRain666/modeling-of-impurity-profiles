@@ -1,16 +1,47 @@
 @import './reset.scss';
 
-.title {
-  font-size: 20px;
-  text-align: center;
-  margin: 2% 0;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
-.mainContainer {
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text, text {
+  color: black;
+  font: {
+    family: 'Times New Roman', Times, serif;
+    size: 18px,
+  }
+}
+
+.main-content {
   padding: 2%;
-  .graphsContainer {
+  .main-content__title {
+    text-align: center;
+    font-size: 40px;
+  }
+  .form__button {
+    justify-self: center;
+    align-self: center;
+    width: 20%;
+  }
+  .form-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+  }
+  .work-space__graphic {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+  }
+  .graphic__Y {
+    align-self: flex-start;
+  }
+  .graphic__X {
+    align-self: flex-end;
   }
 }
