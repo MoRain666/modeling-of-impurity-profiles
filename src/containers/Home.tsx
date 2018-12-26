@@ -29,9 +29,9 @@ class Home extends React.Component<Props, State> {
     this.state = {
       data: [],
       isData: false,
-      range: undefined,
-      step: undefined,
-      time: undefined,
+      range: 0,
+      step: 0,
+      time: 0,
       error: false
     };
   }
@@ -39,10 +39,10 @@ class Home extends React.Component<Props, State> {
   onClick = () => {
     if (
       this.state.range > 10 ||
-      this.state.range < 0 ||
+      this.state.range <= 0 ||
       this.state.step > 2 ||
-      this.state.step < 0 ||
-      this.state.time < 0
+      this.state.step <= 0 ||
+      this.state.time <= 0
     ) {
       this.setState({ error: true });
       return;
@@ -115,6 +115,7 @@ class Home extends React.Component<Props, State> {
                 Шаг рассчёта по оси X (в микрометрах)
               </Label>
               <Input
+                value={this.state.step}
                 min={0}
                 max={2}
                 type='number'
@@ -124,6 +125,7 @@ class Home extends React.Component<Props, State> {
             <FormGroup>
               <Label className='text'>Время (в минутах)</Label>
               <Input
+                value={this.state.time}
                 min={1}
                 max={50}
                 type='number'

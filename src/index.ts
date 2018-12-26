@@ -4,7 +4,7 @@ import { enableLiveReload } from 'electron-compile';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow: Electron.BrowserWindow | null = null;
+let mainWindow: BrowserWindow | null = null;
 
 const isDevMode = process.execPath.match(/[\\/]electron/);
 
@@ -23,10 +23,10 @@ const createWindow = async () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   // Open the DevTools.
-  if (isDevMode) {
+  // if (isDevMode) {
     await installExtension(REACT_DEVELOPER_TOOLS);
     mainWindow.webContents.openDevTools();
-  }
+  // }
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {

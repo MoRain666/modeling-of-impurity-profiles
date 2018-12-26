@@ -27,7 +27,7 @@
         "removeComments": false,
         "preserveConstEnums": true,
         "declaration": true,
-        "noImplicitAny": true,
+        "noImplicitAny": false,
         "noImplicitReturns": true,
         "suppressImplicitAnyIndexErrors": true,
         "strictNullChecks": true,
@@ -39,6 +39,7 @@
         "noEmitHelpers": true,
         "experimentalDecorators": true,
         "target": "es2015",
+        "module": "commonjs",
         "jsx": "react"
       }
     }
